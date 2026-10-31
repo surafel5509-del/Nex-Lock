@@ -1,0 +1,415 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.7/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:preBuild UP-TO-DATE
+> Task :core-database:preBuild UP-TO-DATE
+> Task :core:preBuild UP-TO-DATE
+> Task :core-common:preBuild UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :core:preReleaseBuild UP-TO-DATE
+> Task :core-common:preReleaseBuild UP-TO-DATE
+> Task :core-database:preReleaseBuild UP-TO-DATE
+> Task :core:mergeReleaseJniLibFolders
+> Task :core-database:mergeReleaseJniLibFolders
+> Task :core-common:mergeReleaseJniLibFolders
+> Task :app:mergeReleaseJniLibFolders
+> Task :core-design:preBuild UP-TO-DATE
+> Task :core-design:preReleaseBuild UP-TO-DATE
+> Task :core-common:mergeReleaseNativeLibs NO-SOURCE
+> Task :core-design:mergeReleaseJniLibFolders
+> Task :core-database:mergeReleaseNativeLibs NO-SOURCE
+> Task :core:mergeReleaseNativeLibs NO-SOURCE
+> Task :core-design:mergeReleaseNativeLibs NO-SOURCE
+> Task :core:copyReleaseJniLibsProjectOnly
+> Task :core-database:copyReleaseJniLibsProjectOnly
+> Task :core-security:preBuild UP-TO-DATE
+> Task :feature-app-lock:preBuild UP-TO-DATE
+> Task :feature-app-lock:preReleaseBuild UP-TO-DATE
+> Task :core-security:preReleaseBuild UP-TO-DATE
+> Task :core-design:copyReleaseJniLibsProjectOnly
+> Task :feature-authentication:preBuild UP-TO-DATE
+> Task :core-common:copyReleaseJniLibsProjectOnly
+> Task :feature-automation:preBuild UP-TO-DATE
+> Task :feature-authentication:preReleaseBuild UP-TO-DATE
+> Task :feature-automation:preReleaseBuild UP-TO-DATE
+> Task :feature-app-lock:mergeReleaseJniLibFolders
+> Task :feature-app-lock:mergeReleaseNativeLibs NO-SOURCE
+> Task :feature-automation:mergeReleaseJniLibFolders
+> Task :core-security:mergeReleaseJniLibFolders
+> Task :feature-automation:mergeReleaseNativeLibs NO-SOURCE
+> Task :feature-authentication:mergeReleaseJniLibFolders
+> Task :feature-app-lock:copyReleaseJniLibsProjectOnly
+> Task :feature-dashboard:preBuild UP-TO-DATE
+> Task :feature-dashboard:preReleaseBuild UP-TO-DATE
+> Task :core-security:mergeReleaseNativeLibs NO-SOURCE
+> Task :feature-dashboard:mergeReleaseJniLibFolders
+> Task :feature-automation:copyReleaseJniLibsProjectOnly
+> Task :feature-authentication:mergeReleaseNativeLibs NO-SOURCE
+> Task :feature-intruder-detection:preBuild UP-TO-DATE
+> Task :feature-intruder-detection:preReleaseBuild UP-TO-DATE
+> Task :core-security:copyReleaseJniLibsProjectOnly
+> Task :feature-settings:preBuild UP-TO-DATE
+> Task :feature-dashboard:mergeReleaseNativeLibs NO-SOURCE
+> Task :feature-settings:preReleaseBuild UP-TO-DATE
+> Task :feature-authentication:copyReleaseJniLibsProjectOnly
+> Task :feature-vault:preBuild UP-TO-DATE
+> Task :feature-vault:preReleaseBuild UP-TO-DATE
+> Task :feature-intruder-detection:mergeReleaseJniLibFolders
+> Task :feature-dashboard:copyReleaseJniLibsProjectOnly
+> Task :feature-vault:mergeReleaseJniLibFolders
+> Task :feature-settings:mergeReleaseJniLibFolders
+> Task :feature-vault:mergeReleaseNativeLibs NO-SOURCE
+> Task :feature-intruder-detection:mergeReleaseNativeLibs NO-SOURCE
+> Task :feature-settings:mergeReleaseNativeLibs NO-SOURCE
+> Task :feature-vault:copyReleaseJniLibsProjectOnly
+> Task :feature-intruder-detection:copyReleaseJniLibsProjectOnly
+> Task :feature-settings:copyReleaseJniLibsProjectOnly
+> Task :core-common:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core-common:generateReleaseResValues FROM-CACHE
+> Task :core-database:generateReleaseResValues FROM-CACHE
+> Task :core:generateReleaseResValues FROM-CACHE
+> Task :core-common:generateReleaseResources
+> Task :core-database:generateReleaseResources
+> Task :core:generateReleaseResources
+> Task :core-common:packageReleaseResources
+> Task :core-database:packageReleaseResources
+> Task :core:packageReleaseResources
+> Task :core:parseReleaseLocalResources FROM-CACHE
+> Task :core-database:parseReleaseLocalResources FROM-CACHE
+> Task :core-common:parseReleaseLocalResources FROM-CACHE
+> Task :core-common:generateReleaseRFile FROM-CACHE
+> Task :core-database:generateReleaseRFile FROM-CACHE
+> Task :core-database:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:generateReleaseRFile FROM-CACHE
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core-security:generateReleaseResValues FROM-CACHE
+> Task :core-security:generateReleaseResources FROM-CACHE
+> Task :core-security:packageReleaseResources
+> Task :core-security:parseReleaseLocalResources FROM-CACHE
+> Task :core-database:javaPreCompileRelease FROM-CACHE
+> Task :core-security:generateReleaseRFile FROM-CACHE
+> Task :core-security:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:javaPreCompileRelease FROM-CACHE
+> Task :core-design:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core-security:javaPreCompileRelease FROM-CACHE
+> Task :feature-dashboard:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core-design:generateReleaseResValues FROM-CACHE
+> Task :feature-dashboard:generateReleaseResValues FROM-CACHE
+> Task :core-design:generateReleaseResources FROM-CACHE
+> Task :feature-dashboard:generateReleaseResources FROM-CACHE
+> Task :core-design:packageReleaseResources
+> Task :feature-dashboard:packageReleaseResources
+> Task :core-design:parseReleaseLocalResources FROM-CACHE
+> Task :feature-dashboard:parseReleaseLocalResources FROM-CACHE
+> Task :core-design:generateReleaseRFile FROM-CACHE
+> Task :feature-dashboard:generateReleaseRFile FROM-CACHE
+> Task :core-design:javaPreCompileRelease FROM-CACHE
+> Task :feature-app-lock:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-app-lock:generateReleaseResValues FROM-CACHE
+> Task :feature-dashboard:javaPreCompileRelease FROM-CACHE
+> Task :feature-authentication:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-app-lock:generateReleaseResources FROM-CACHE
+> Task :feature-authentication:generateReleaseResValues FROM-CACHE
+> Task :feature-authentication:generateReleaseResources FROM-CACHE
+> Task :feature-app-lock:packageReleaseResources
+> Task :feature-app-lock:parseReleaseLocalResources FROM-CACHE
+> Task :feature-app-lock:generateReleaseRFile FROM-CACHE
+> Task :feature-app-lock:javaPreCompileRelease FROM-CACHE
+> Task :feature-vault:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-authentication:packageReleaseResources
+> Task :feature-vault:generateReleaseResValues FROM-CACHE
+> Task :feature-vault:generateReleaseResources FROM-CACHE
+> Task :feature-authentication:parseReleaseLocalResources FROM-CACHE
+> Task :feature-authentication:generateReleaseRFile FROM-CACHE
+> Task :feature-authentication:javaPreCompileRelease FROM-CACHE
+> Task :feature-intruder-detection:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-vault:packageReleaseResources
+> Task :feature-intruder-detection:generateReleaseResValues FROM-CACHE
+> Task :feature-vault:parseReleaseLocalResources FROM-CACHE
+> Task :feature-intruder-detection:generateReleaseResources FROM-CACHE
+> Task :feature-vault:generateReleaseRFile FROM-CACHE
+> Task :feature-vault:javaPreCompileRelease FROM-CACHE
+> Task :feature-intruder-detection:packageReleaseResources
+> Task :feature-automation:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-automation:generateReleaseResValues FROM-CACHE
+> Task :feature-intruder-detection:parseReleaseLocalResources FROM-CACHE
+> Task :feature-automation:generateReleaseResources FROM-CACHE
+> Task :feature-intruder-detection:generateReleaseRFile FROM-CACHE
+> Task :feature-intruder-detection:javaPreCompileRelease FROM-CACHE
+> Task :feature-settings:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-automation:packageReleaseResources
+> Task :feature-settings:generateReleaseResValues FROM-CACHE
+> Task :feature-settings:generateReleaseResources FROM-CACHE
+> Task :feature-automation:parseReleaseLocalResources FROM-CACHE
+> Task :feature-automation:generateReleaseRFile FROM-CACHE
+> Task :feature-settings:packageReleaseResources
+> Task :feature-automation:javaPreCompileRelease FROM-CACHE
+> Task :feature-settings:parseReleaseLocalResources FROM-CACHE
+> Task :core:prepareReleaseArtProfile
+> Task :core-database:prepareReleaseArtProfile
+> Task :feature-settings:generateReleaseRFile FROM-CACHE
+> Task :core-design:prepareReleaseArtProfile
+> Task :core-security:prepareReleaseArtProfile
+> Task :feature-app-lock:prepareReleaseArtProfile
+> Task :feature-settings:javaPreCompileRelease FROM-CACHE
+> Task :feature-authentication:prepareReleaseArtProfile
+> Task :feature-automation:prepareReleaseArtProfile
+> Task :feature-dashboard:prepareReleaseArtProfile
+> Task :feature-intruder-detection:prepareReleaseArtProfile
+> Task :feature-settings:prepareReleaseArtProfile
+> Task :feature-vault:prepareReleaseArtProfile
+> Task :core-database:writeReleaseAarMetadata
+> Task :core:writeReleaseAarMetadata
+> Task :core-design:writeReleaseAarMetadata
+> Task :core-security:writeReleaseAarMetadata
+> Task :feature-app-lock:writeReleaseAarMetadata
+> Task :app:mergeReleaseNativeLibs
+> Task :feature-automation:writeReleaseAarMetadata
+> Task :feature-authentication:writeReleaseAarMetadata
+> Task :feature-dashboard:writeReleaseAarMetadata
+> Task :feature-settings:writeReleaseAarMetadata
+> Task :feature-intruder-detection:writeReleaseAarMetadata
+> Task :feature-vault:writeReleaseAarMetadata
+> Task :core:extractDeepLinksRelease FROM-CACHE
+> Task :core:processReleaseManifest FROM-CACHE
+> Task :core-database:extractDeepLinksRelease FROM-CACHE
+> Task :app:checkReleaseDuplicateClasses
+
+> Task :app:stripReleaseDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so, libdatastore_shared_counter.so, libimage_processing_util_jni.so.
+
+> Task :core-database:processReleaseManifest FROM-CACHE
+> Task :core-design:extractDeepLinksRelease FROM-CACHE
+> Task :core-security:extractDeepLinksRelease FROM-CACHE
+> Task :core-design:processReleaseManifest FROM-CACHE
+> Task :feature-app-lock:extractDeepLinksRelease FROM-CACHE
+> Task :app:buildKotlinToolingMetadata
+> Task :core-security:processReleaseManifest FROM-CACHE
+> Task :feature-authentication:extractDeepLinksRelease FROM-CACHE
+> Task :feature-app-lock:processReleaseManifest FROM-CACHE
+> Task :feature-automation:extractDeepLinksRelease FROM-CACHE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-authentication:processReleaseManifest FROM-CACHE
+> Task :feature-automation:processReleaseManifest FROM-CACHE
+> Task :feature-dashboard:extractDeepLinksRelease FROM-CACHE
+> Task :app:extractReleaseNativeSymbolTables
+> Task :feature-intruder-detection:extractDeepLinksRelease FROM-CACHE
+> Task :app:generateReleaseBuildConfig
+> Task :feature-dashboard:processReleaseManifest FROM-CACHE
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :feature-settings:extractDeepLinksRelease FROM-CACHE
+> Task :app:generateReleaseResValues FROM-CACHE
+> Task :feature-intruder-detection:processReleaseManifest FROM-CACHE
+> Task :feature-vault:extractDeepLinksRelease FROM-CACHE
+> Task :feature-settings:processReleaseManifest FROM-CACHE
+> Task :feature-vault:processReleaseManifest FROM-CACHE
+> Task :core:mergeReleaseShaders
+> Task :core:compileReleaseShaders NO-SOURCE
+> Task :core:generateReleaseAssets UP-TO-DATE
+> Task :core:packageReleaseAssets
+> Task :core-database:mergeReleaseShaders
+> Task :core-database:compileReleaseShaders NO-SOURCE
+> Task :core-database:generateReleaseAssets UP-TO-DATE
+> Task :core-design:mergeReleaseShaders
+> Task :core-design:compileReleaseShaders NO-SOURCE
+> Task :core-design:generateReleaseAssets UP-TO-DATE
+> Task :core-database:packageReleaseAssets
+> Task :app:mapReleaseSourceSetPaths
+> Task :core-design:packageReleaseAssets
+> Task :core-security:mergeReleaseShaders
+> Task :app:generateReleaseResources
+> Task :core-security:compileReleaseShaders NO-SOURCE
+> Task :core-security:generateReleaseAssets UP-TO-DATE
+> Task :feature-app-lock:mergeReleaseShaders
+> Task :feature-app-lock:compileReleaseShaders NO-SOURCE
+> Task :feature-app-lock:generateReleaseAssets UP-TO-DATE
+> Task :core-security:packageReleaseAssets
+> Task :feature-authentication:mergeReleaseShaders
+> Task :feature-app-lock:packageReleaseAssets
+> Task :feature-authentication:compileReleaseShaders NO-SOURCE
+> Task :feature-authentication:generateReleaseAssets UP-TO-DATE
+> Task :feature-automation:mergeReleaseShaders
+> Task :feature-automation:compileReleaseShaders NO-SOURCE
+> Task :feature-authentication:packageReleaseAssets
+> Task :feature-automation:generateReleaseAssets UP-TO-DATE
+> Task :feature-dashboard:mergeReleaseShaders
+> Task :feature-dashboard:compileReleaseShaders NO-SOURCE
+> Task :feature-dashboard:generateReleaseAssets UP-TO-DATE
+> Task :feature-automation:packageReleaseAssets
+> Task :feature-intruder-detection:mergeReleaseShaders
+> Task :feature-dashboard:packageReleaseAssets
+> Task :feature-intruder-detection:compileReleaseShaders NO-SOURCE
+> Task :feature-intruder-detection:generateReleaseAssets UP-TO-DATE
+> Task :feature-settings:mergeReleaseShaders
+> Task :feature-settings:compileReleaseShaders NO-SOURCE
+> Task :feature-settings:generateReleaseAssets UP-TO-DATE
+> Task :feature-intruder-detection:packageReleaseAssets
+> Task :feature-settings:packageReleaseAssets
+> Task :feature-vault:mergeReleaseShaders
+> Task :feature-vault:compileReleaseShaders NO-SOURCE
+> Task :feature-vault:generateReleaseAssets UP-TO-DATE
+> Task :feature-vault:packageReleaseAssets
+> Task :core-common:javaPreCompileRelease FROM-CACHE
+> Task :core-common:prepareReleaseArtProfile
+> Task :core-common:extractDeepLinksRelease FROM-CACHE
+> Task :core-common:writeReleaseAarMetadata
+> Task :core-common:processReleaseManifest FROM-CACHE
+> Task :core-common:mergeReleaseShaders
+> Task :core-common:compileReleaseShaders NO-SOURCE
+> Task :core-common:generateReleaseAssets UP-TO-DATE
+> Task :core-common:packageReleaseAssets
+> Task :app:mergeReleaseArtProfile
+> Task :app:checkReleaseAarMetadata
+> Task :app:packageReleaseResources
+> Task :app:parseReleaseLocalResources FROM-CACHE
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksRelease FROM-CACHE
+> Task :app:processReleaseMainManifest
+> Task :app:processReleaseManifest
+> Task :app:javaPreCompileRelease FROM-CACHE
+> Task :app:extractProguardFiles
+> Task :app:processReleaseManifestForPackage
+> Task :app:mergeReleaseStartupProfile
+> Task :app:mergeReleaseShaders
+> Task :app:compileReleaseShaders NO-SOURCE
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :app:mergeReleaseAssets
+> Task :app:compressReleaseAssets
+> Task :app:mergeReleaseResources
+> Task :app:extractReleaseVersionControlInfo
+> Task :app:processApplicationManifestReleaseForBundle
+> Task :app:collectReleaseDependencies
+> Task :app:sdkReleaseDependencyData
+> Task :app:validateSigningRelease
+> Task :app:writeReleaseAppMetadata
+> Task :app:writeReleaseSigningConfigVersions
+> Task :app:processReleaseResources
+> Task :app:bundleReleaseResources
+> Task :core-common:compileReleaseKotlin
+> Task :core-common:compileReleaseJavaWithJavac NO-SOURCE
+> Task :core-common:mergeReleaseGeneratedProguardFiles
+> Task :core-common:exportReleaseConsumerProguardFiles
+> Task :core-common:bundleLibRuntimeToJarRelease
+> Task :core-common:bundleLibCompileToJarRelease
+> Task :core-common:processReleaseJavaRes
+> Task :core-security:kspReleaseKotlin
+> Task :core-database:kspReleaseKotlin
+> Task :core-database:compileReleaseKotlin
+> Task :core-design:compileReleaseKotlin
+> Task :core-design:compileReleaseJavaWithJavac NO-SOURCE
+> Task :core-design:bundleLibCompileToJarRelease
+> Task :core-design:mergeReleaseGeneratedProguardFiles
+> Task :core-design:bundleLibRuntimeToJarRelease
+> Task :core-design:exportReleaseConsumerProguardFiles
+> Task :core-design:processReleaseJavaRes
+> Task :core-database:compileReleaseJavaWithJavac
+> Task :core-security:compileReleaseKotlin
+> Task :core-database:processReleaseJavaRes
+> Task :core-database:transformReleaseClassesWithAsm
+> Task :core-database:bundleLibCompileToJarRelease
+> Task :core-database:mergeReleaseGeneratedProguardFiles
+> Task :core-database:bundleLibRuntimeToJarRelease
+> Task :core-database:exportReleaseConsumerProguardFiles
+> Task :core-security:compileReleaseJavaWithJavac
+> Task :core-security:processReleaseJavaRes
+> Task :core-security:transformReleaseClassesWithAsm
+> Task :core-security:bundleLibCompileToJarRelease
+> Task :core-security:mergeReleaseGeneratedProguardFiles
+> Task :core-security:bundleLibRuntimeToJarRelease
+> Task :core-security:exportReleaseConsumerProguardFiles
+> Task :core:kspReleaseKotlin
+> Task :core:compileReleaseKotlin
+> Task :core:compileReleaseJavaWithJavac
+> Task :core:processReleaseJavaRes
+> Task :core:transformReleaseClassesWithAsm
+> Task :core:bundleLibCompileToJarRelease
+> Task :core:bundleLibRuntimeToJarRelease
+> Task :feature-vault:kspReleaseKotlin
+> Task :feature-dashboard:kspReleaseKotlin
+> Task :feature-app-lock:kspReleaseKotlin
+> Task :feature-authentication:kspReleaseKotlin
+> Task :feature-dashboard:compileReleaseKotlin
+> Task :feature-authentication:compileReleaseKotlin
+
+> Task :feature-vault:compileReleaseKotlin
+w: file:///home/runner/work/Nex-Lock/Nex-Lock/feature-vault/src/main/java/com/nexlock/feature/vault/VaultScreen.kt:478:38 '@property:Deprecated(...) val Icons.Rounded.Note: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Rounded.Note.
+w: file:///home/runner/work/Nex-Lock/Nex-Lock/feature-vault/src/main/java/com/nexlock/feature/vault/VaultScreen.kt:492:47 '@property:Deprecated(...) val Icons.Rounded.Note: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Rounded.Note.
+
+> Task :feature-dashboard:compileReleaseJavaWithJavac
+> Task :feature-authentication:compileReleaseJavaWithJavac
+> Task :feature-dashboard:transformReleaseClassesWithAsm
+> Task :feature-dashboard:mergeReleaseGeneratedProguardFiles
+> Task :feature-authentication:transformReleaseClassesWithAsm
+> Task :feature-dashboard:exportReleaseConsumerProguardFiles
+> Task :feature-authentication:mergeReleaseGeneratedProguardFiles
+> Task :feature-authentication:exportReleaseConsumerProguardFiles
+> Task :feature-vault:compileReleaseJavaWithJavac
+> Task :feature-vault:transformReleaseClassesWithAsm
+> Task :feature-vault:mergeReleaseGeneratedProguardFiles
+> Task :feature-vault:exportReleaseConsumerProguardFiles
+> Task :feature-app-lock:compileReleaseKotlin
+> Task :feature-app-lock:compileReleaseJavaWithJavac
+> Task :feature-app-lock:transformReleaseClassesWithAsm
+> Task :feature-app-lock:mergeReleaseGeneratedProguardFiles
+> Task :feature-app-lock:exportReleaseConsumerProguardFiles
+> Task :core:mergeReleaseGeneratedProguardFiles
+> Task :core:exportReleaseConsumerProguardFiles
+> Task :feature-app-lock:bundleLibCompileToJarRelease
+> Task :feature-authentication:bundleLibCompileToJarRelease
+> Task :feature-dashboard:bundleLibCompileToJarRelease
+> Task :feature-vault:bundleLibCompileToJarRelease
+> Task :feature-dashboard:bundleLibRuntimeToJarRelease
+> Task :feature-app-lock:bundleLibRuntimeToJarRelease
+> Task :feature-authentication:bundleLibRuntimeToJarRelease
+> Task :feature-vault:bundleLibRuntimeToJarRelease
+> Task :feature-app-lock:processReleaseJavaRes
+> Task :feature-authentication:processReleaseJavaRes
+> Task :feature-dashboard:processReleaseJavaRes
+> Task :feature-vault:processReleaseJavaRes
+> Task :feature-intruder-detection:kspReleaseKotlin
+> Task :feature-automation:kspReleaseKotlin
+> Task :feature-settings:kspReleaseKotlin
+> Task :feature-intruder-detection:compileReleaseKotlin
+> Task :feature-intruder-detection:compileReleaseJavaWithJavac
+> Task :feature-intruder-detection:processReleaseJavaRes
+> Task :feature-intruder-detection:transformReleaseClassesWithAsm
+> Task :feature-intruder-detection:mergeReleaseGeneratedProguardFiles
+> Task :feature-intruder-detection:exportReleaseConsumerProguardFiles
+> Task :feature-intruder-detection:bundleLibCompileToJarRelease
+> Task :feature-intruder-detection:bundleLibRuntimeToJarRelease
+> Task :feature-automation:compileReleaseKotlin
+> Task :feature-automation:compileReleaseJavaWithJavac
+> Task :feature-automation:processReleaseJavaRes
+> Task :feature-automation:transformReleaseClassesWithAsm
+> Task :feature-automation:mergeReleaseGeneratedProguardFiles
+> Task :feature-automation:exportReleaseConsumerProguardFiles
+> Task :feature-automation:bundleLibCompileToJarRelease
+> Task :feature-automation:bundleLibRuntimeToJarRelease
+> Task :feature-settings:compileReleaseKotlin
+> Task :feature-settings:compileReleaseJavaWithJavac
+> Task :feature-settings:processReleaseJavaRes
+> Task :feature-settings:transformReleaseClassesWithAsm
+> Task :feature-settings:mergeReleaseGeneratedProguardFiles
+> Task :feature-settings:exportReleaseConsumerProguardFiles
+> Task :feature-settings:bundleLibRuntimeToJarRelease
+> Task :feature-settings:bundleLibCompileToJarRelease
+> Task :app:kspReleaseKotlin
+> Task :app:compileReleaseKotlin
+> Task :app:compileReleaseJavaWithJavac
+> Task :app:hiltAggregateDepsRelease FROM-CACHE
+> Task :app:hiltJavaCompileRelease
+> Task :app:processReleaseJavaRes
+> Task :app:transformReleaseClassesWithAsm
+> Task :app:mergeReleaseGeneratedProguardFiles
+> Task :app:mergeReleaseJavaResource
+> Task :app:expandReleaseArtProfileWildcards
+> Task :app:minifyReleaseWithR8
+> Task :app:compileReleaseArtProfile
+> Task :app:shrinkReleaseRes
+> Task :app:optimizeReleaseResources
+> Task :app:packageRelease
+> Task :app:createReleaseApkListingFileRedirect
+> Task :app:assembleRelease
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_4-1793469480385.json
+
+BUILD SUCCESSFUL in 2m 26s
+321 actionable tasks: 235 executed, 86 from cache

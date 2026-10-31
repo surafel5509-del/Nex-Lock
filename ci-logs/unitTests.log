@@ -1,0 +1,403 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.7/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :core-database:preBuild UP-TO-DATE
+> Task :core:preBuild UP-TO-DATE
+> Task :core:preDebugBuild UP-TO-DATE
+> Task :core-common:preBuild UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :core-common:preDebugBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core-database:preDebugBuild UP-TO-DATE
+> Task :core-common:writeDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :core-design:preBuild UP-TO-DATE
+> Task :core-design:preDebugBuild UP-TO-DATE
+> Task :core-security:preBuild UP-TO-DATE
+> Task :core-security:preDebugBuild UP-TO-DATE
+> Task :core:writeDebugAarMetadata UP-TO-DATE
+> Task :core-database:writeDebugAarMetadata UP-TO-DATE
+> Task :feature-app-lock:preBuild UP-TO-DATE
+> Task :feature-app-lock:preDebugBuild UP-TO-DATE
+> Task :core-design:writeDebugAarMetadata UP-TO-DATE
+> Task :feature-automation:preBuild UP-TO-DATE
+> Task :feature-authentication:preBuild UP-TO-DATE
+> Task :feature-automation:preDebugBuild UP-TO-DATE
+> Task :feature-app-lock:writeDebugAarMetadata UP-TO-DATE
+> Task :feature-dashboard:preBuild UP-TO-DATE
+> Task :feature-authentication:preDebugBuild UP-TO-DATE
+> Task :core-security:writeDebugAarMetadata UP-TO-DATE
+> Task :feature-intruder-detection:preBuild UP-TO-DATE
+> Task :feature-dashboard:preDebugBuild UP-TO-DATE
+> Task :feature-intruder-detection:preDebugBuild UP-TO-DATE
+> Task :feature-automation:writeDebugAarMetadata UP-TO-DATE
+> Task :feature-settings:preBuild UP-TO-DATE
+> Task :feature-settings:preDebugBuild UP-TO-DATE
+> Task :feature-authentication:writeDebugAarMetadata UP-TO-DATE
+> Task :feature-vault:preBuild UP-TO-DATE
+> Task :feature-vault:preDebugBuild UP-TO-DATE
+> Task :feature-dashboard:writeDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :feature-vault:writeDebugAarMetadata UP-TO-DATE
+> Task :feature-settings:writeDebugAarMetadata UP-TO-DATE
+> Task :feature-intruder-detection:writeDebugAarMetadata UP-TO-DATE
+> Task :core:generateDebugResValues UP-TO-DATE
+> Task :core-database:generateDebugResValues UP-TO-DATE
+> Task :core-common:generateDebugResValues UP-TO-DATE
+> Task :core-common:generateDebugResources UP-TO-DATE
+> Task :core-database:generateDebugResources UP-TO-DATE
+> Task :core:generateDebugResources UP-TO-DATE
+> Task :core-common:packageDebugResources UP-TO-DATE
+> Task :core-database:packageDebugResources UP-TO-DATE
+> Task :core:packageDebugResources UP-TO-DATE
+> Task :core-security:generateDebugResValues UP-TO-DATE
+> Task :feature-app-lock:generateDebugResValues UP-TO-DATE
+> Task :core-design:generateDebugResValues UP-TO-DATE
+> Task :core-security:generateDebugResources UP-TO-DATE
+> Task :feature-app-lock:generateDebugResources UP-TO-DATE
+> Task :core-design:generateDebugResources UP-TO-DATE
+> Task :core-security:packageDebugResources UP-TO-DATE
+> Task :feature-authentication:generateDebugResValues UP-TO-DATE
+> Task :core-design:packageDebugResources UP-TO-DATE
+> Task :feature-authentication:generateDebugResources UP-TO-DATE
+> Task :feature-automation:generateDebugResValues UP-TO-DATE
+> Task :feature-automation:generateDebugResources UP-TO-DATE
+> Task :feature-app-lock:packageDebugResources UP-TO-DATE
+> Task :feature-authentication:packageDebugResources UP-TO-DATE
+> Task :feature-intruder-detection:generateDebugResValues UP-TO-DATE
+> Task :feature-dashboard:generateDebugResValues UP-TO-DATE
+> Task :feature-automation:packageDebugResources UP-TO-DATE
+> Task :feature-intruder-detection:generateDebugResources UP-TO-DATE
+> Task :feature-settings:generateDebugResValues UP-TO-DATE
+> Task :feature-dashboard:generateDebugResources UP-TO-DATE
+> Task :feature-settings:generateDebugResources UP-TO-DATE
+> Task :feature-intruder-detection:packageDebugResources UP-TO-DATE
+> Task :feature-vault:generateDebugResValues UP-TO-DATE
+> Task :feature-settings:packageDebugResources UP-TO-DATE
+> Task :feature-vault:generateDebugResources UP-TO-DATE
+> Task :feature-dashboard:packageDebugResources UP-TO-DATE
+> Task :core:extractDeepLinksDebug UP-TO-DATE
+> Task :core-common:extractDeepLinksDebug UP-TO-DATE
+> Task :feature-vault:packageDebugResources UP-TO-DATE
+> Task :core-database:extractDeepLinksDebug UP-TO-DATE
+> Task :core-common:processDebugManifest UP-TO-DATE
+> Task :core-design:extractDeepLinksDebug UP-TO-DATE
+> Task :core:processDebugManifest UP-TO-DATE
+> Task :core-security:extractDeepLinksDebug UP-TO-DATE
+> Task :core-database:processDebugManifest UP-TO-DATE
+> Task :core-design:processDebugManifest UP-TO-DATE
+> Task :feature-authentication:extractDeepLinksDebug UP-TO-DATE
+> Task :feature-app-lock:extractDeepLinksDebug UP-TO-DATE
+> Task :core-security:processDebugManifest UP-TO-DATE
+> Task :feature-authentication:processDebugManifest UP-TO-DATE
+> Task :feature-automation:extractDeepLinksDebug UP-TO-DATE
+> Task :feature-app-lock:processDebugManifest UP-TO-DATE
+> Task :feature-dashboard:extractDeepLinksDebug UP-TO-DATE
+> Task :feature-intruder-detection:extractDeepLinksDebug UP-TO-DATE
+> Task :feature-dashboard:processDebugManifest UP-TO-DATE
+> Task :feature-automation:processDebugManifest UP-TO-DATE
+> Task :feature-settings:extractDeepLinksDebug UP-TO-DATE
+> Task :feature-intruder-detection:processDebugManifest UP-TO-DATE
+> Task :feature-vault:extractDeepLinksDebug UP-TO-DATE
+> Task :core:compileDebugLibraryResources UP-TO-DATE
+> Task :feature-vault:processDebugManifest UP-TO-DATE
+> Task :feature-settings:processDebugManifest UP-TO-DATE
+> Task :core-database:compileDebugLibraryResources UP-TO-DATE
+> Task :core-common:compileDebugLibraryResources UP-TO-DATE
+> Task :core:parseDebugLocalResources UP-TO-DATE
+> Task :core-database:parseDebugLocalResources UP-TO-DATE
+> Task :core:generateDebugRFile UP-TO-DATE
+> Task :core-common:parseDebugLocalResources UP-TO-DATE
+> Task :core-database:generateDebugRFile UP-TO-DATE
+> Task :core-design:compileDebugLibraryResources UP-TO-DATE
+> Task :core-security:compileDebugLibraryResources UP-TO-DATE
+> Task :core-design:parseDebugLocalResources UP-TO-DATE
+> Task :core-security:parseDebugLocalResources UP-TO-DATE
+> Task :core-common:generateDebugRFile UP-TO-DATE
+> Task :feature-app-lock:compileDebugLibraryResources UP-TO-DATE
+> Task :core-design:generateDebugRFile UP-TO-DATE
+> Task :feature-authentication:compileDebugLibraryResources UP-TO-DATE
+> Task :core-security:generateDebugRFile UP-TO-DATE
+> Task :feature-app-lock:parseDebugLocalResources UP-TO-DATE
+> Task :feature-authentication:parseDebugLocalResources UP-TO-DATE
+> Task :feature-automation:compileDebugLibraryResources UP-TO-DATE
+> Task :feature-app-lock:generateDebugRFile UP-TO-DATE
+> Task :feature-dashboard:compileDebugLibraryResources UP-TO-DATE
+> Task :feature-automation:parseDebugLocalResources UP-TO-DATE
+> Task :feature-dashboard:parseDebugLocalResources UP-TO-DATE
+> Task :feature-automation:generateDebugRFile UP-TO-DATE
+> Task :feature-intruder-detection:compileDebugLibraryResources UP-TO-DATE
+> Task :feature-dashboard:generateDebugRFile UP-TO-DATE
+> Task :feature-settings:compileDebugLibraryResources UP-TO-DATE
+> Task :feature-intruder-detection:parseDebugLocalResources UP-TO-DATE
+> Task :feature-settings:parseDebugLocalResources UP-TO-DATE
+> Task :feature-intruder-detection:generateDebugRFile UP-TO-DATE
+> Task :feature-vault:compileDebugLibraryResources UP-TO-DATE
+> Task :feature-settings:generateDebugRFile UP-TO-DATE
+> Task :core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core-common:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-vault:parseDebugLocalResources UP-TO-DATE
+> Task :feature-vault:generateDebugRFile UP-TO-DATE
+> Task :core-database:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-authentication:generateDebugRFile UP-TO-DATE
+> Task :core-security:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core-security:javaPreCompileDebug UP-TO-DATE
+> Task :core:javaPreCompileDebug UP-TO-DATE
+> Task :core-design:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core-design:javaPreCompileDebug UP-TO-DATE
+> Task :feature-app-lock:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-app-lock:javaPreCompileDebug UP-TO-DATE
+> Task :feature-authentication:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-authentication:javaPreCompileDebug UP-TO-DATE
+> Task :feature-automation:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-automation:javaPreCompileDebug UP-TO-DATE
+> Task :feature-dashboard:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-dashboard:javaPreCompileDebug UP-TO-DATE
+> Task :feature-intruder-detection:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-intruder-detection:javaPreCompileDebug UP-TO-DATE
+> Task :feature-settings:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-settings:javaPreCompileDebug UP-TO-DATE
+> Task :feature-vault:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :feature-vault:javaPreCompileDebug UP-TO-DATE
+> Task :core:preDebugUnitTestBuild UP-TO-DATE
+> Task :core-database:javaPreCompileDebug UP-TO-DATE
+> Task :core-database:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :core-common:compileDebugKotlin UP-TO-DATE
+> Task :core-database:generateDebugUnitTestStubRFile
+> Task :core-common:javaPreCompileDebug UP-TO-DATE
+> Task :core-common:compileDebugJavaWithJavac NO-SOURCE
+> Task :core-common:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :core-database:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :core-common:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :core-database:kspDebugKotlin UP-TO-DATE
+> Task :core-security:kspDebugKotlin UP-TO-DATE
+> Task :core-database:compileDebugKotlin UP-TO-DATE
+> Task :core-database:compileDebugJavaWithJavac UP-TO-DATE
+> Task :core-security:compileDebugKotlin UP-TO-DATE
+> Task :core-security:compileDebugJavaWithJavac UP-TO-DATE
+> Task :core-security:transformDebugClassesWithAsm UP-TO-DATE
+> Task :core-database:transformDebugClassesWithAsm UP-TO-DATE
+> Task :core-security:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :core-security:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :core-database:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :core-database:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :core-common:processDebugJavaRes UP-TO-DATE
+> Task :core-database:processDebugJavaRes UP-TO-DATE
+> Task :core-security:processDebugJavaRes UP-TO-DATE
+> Task :core-common:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :core-database:kspDebugUnitTestKotlin NO-SOURCE
+> Task :core-database:compileDebugUnitTestKotlin NO-SOURCE
+> Task :core-design:compileDebugKotlin UP-TO-DATE
+> Task :core-design:compileDebugJavaWithJavac NO-SOURCE
+> Task :core-database:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :core-design:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :core-design:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :core-design:processDebugJavaRes UP-TO-DATE
+> Task :core-design:preDebugUnitTestBuild UP-TO-DATE
+> Task :core-common:generateDebugUnitTestStubRFile
+> Task :core-design:generateDebugUnitTestStubRFile
+> Task :core:generateDebugUnitTestStubRFile
+> Task :core-design:compileDebugUnitTestKotlin NO-SOURCE
+> Task :core-design:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :core-design:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :core-design:processDebugUnitTestJavaRes NO-SOURCE
+> Task :core-design:testDebugUnitTest NO-SOURCE
+> Task :core-security:preDebugUnitTestBuild UP-TO-DATE
+> Task :core:kspDebugKotlin UP-TO-DATE
+> Task :core-database:hiltAggregateDepsDebugUnitTest
+> Task :core-database:hiltJavaCompileDebugUnitTest NO-SOURCE
+> Task :core-database:processDebugUnitTestJavaRes NO-SOURCE
+> Task :core-security:generateDebugUnitTestStubRFile
+> Task :core-database:transformDebugUnitTestClassesWithAsm
+> Task :core-database:testDebugUnitTest NO-SOURCE
+> Task :feature-app-lock:preDebugUnitTestBuild UP-TO-DATE
+> Task :core:compileDebugKotlin UP-TO-DATE
+> Task :core:compileDebugJavaWithJavac UP-TO-DATE
+> Task :core:transformDebugClassesWithAsm UP-TO-DATE
+> Task :core:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :core:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :feature-app-lock:generateDebugUnitTestStubRFile
+> Task :feature-app-lock:kspDebugKotlin UP-TO-DATE
+> Task :feature-authentication:kspDebugKotlin UP-TO-DATE
+> Task :feature-app-lock:compileDebugKotlin UP-TO-DATE
+> Task :feature-authentication:compileDebugKotlin UP-TO-DATE
+> Task :feature-app-lock:compileDebugJavaWithJavac UP-TO-DATE
+> Task :feature-authentication:compileDebugJavaWithJavac UP-TO-DATE
+> Task :feature-authentication:transformDebugClassesWithAsm UP-TO-DATE
+> Task :feature-app-lock:transformDebugClassesWithAsm UP-TO-DATE
+> Task :feature-authentication:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :feature-app-lock:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :feature-automation:kspDebugKotlin UP-TO-DATE
+> Task :feature-dashboard:kspDebugKotlin UP-TO-DATE
+> Task :feature-automation:compileDebugKotlin UP-TO-DATE
+> Task :feature-dashboard:compileDebugKotlin UP-TO-DATE
+> Task :feature-automation:compileDebugJavaWithJavac UP-TO-DATE
+> Task :feature-dashboard:compileDebugJavaWithJavac UP-TO-DATE
+> Task :feature-automation:transformDebugClassesWithAsm UP-TO-DATE
+> Task :feature-automation:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :feature-dashboard:transformDebugClassesWithAsm UP-TO-DATE
+> Task :feature-dashboard:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :feature-settings:kspDebugKotlin UP-TO-DATE
+> Task :feature-intruder-detection:kspDebugKotlin UP-TO-DATE
+> Task :feature-settings:compileDebugKotlin UP-TO-DATE
+> Task :feature-settings:compileDebugJavaWithJavac UP-TO-DATE
+> Task :feature-settings:transformDebugClassesWithAsm UP-TO-DATE
+> Task :feature-intruder-detection:compileDebugKotlin UP-TO-DATE
+> Task :feature-settings:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :feature-intruder-detection:compileDebugJavaWithJavac UP-TO-DATE
+> Task :feature-intruder-detection:transformDebugClassesWithAsm UP-TO-DATE
+> Task :feature-intruder-detection:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :feature-dashboard:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :feature-app-lock:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :feature-authentication:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :feature-intruder-detection:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :feature-automation:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :feature-settings:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :core:processDebugJavaRes UP-TO-DATE
+> Task :feature-app-lock:processDebugJavaRes UP-TO-DATE
+> Task :feature-vault:kspDebugKotlin UP-TO-DATE
+> Task :feature-authentication:processDebugJavaRes UP-TO-DATE
+> Task :feature-automation:processDebugJavaRes UP-TO-DATE
+> Task :feature-dashboard:processDebugJavaRes UP-TO-DATE
+> Task :feature-intruder-detection:processDebugJavaRes UP-TO-DATE
+> Task :feature-settings:processDebugJavaRes UP-TO-DATE
+> Task :core:kspDebugUnitTestKotlin NO-SOURCE
+> Task :core:compileDebugUnitTestKotlin NO-SOURCE
+> Task :feature-vault:compileDebugKotlin UP-TO-DATE
+> Task :core:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :core:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :feature-vault:compileDebugJavaWithJavac UP-TO-DATE
+> Task :feature-vault:transformDebugClassesWithAsm UP-TO-DATE
+> Task :feature-vault:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:kspDebugKotlin UP-TO-DATE
+> Task :app:compileDebugKotlin UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :feature-vault:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :core:hiltAggregateDepsDebugUnitTest
+> Task :app:hiltAggregateDepsDebug UP-TO-DATE
+> Task :feature-vault:processDebugJavaRes UP-TO-DATE
+> Task :core:hiltJavaCompileDebugUnitTest NO-SOURCE
+> Task :core:processDebugUnitTestJavaRes NO-SOURCE
+> Task :app:hiltJavaCompileDebug UP-TO-DATE
+> Task :core:transformDebugUnitTestClassesWithAsm
+> Task :core:testDebugUnitTest NO-SOURCE
+> Task :core-common:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :core-security:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :feature-app-lock:kspDebugUnitTestKotlin NO-SOURCE
+> Task :app:transformDebugClassesWithAsm UP-TO-DATE
+> Task :feature-app-lock:compileDebugUnitTestKotlin NO-SOURCE
+> Task :feature-app-lock:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :feature-app-lock:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:bundleDebugClassesToRuntimeJar
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :feature-app-lock:hiltAggregateDepsDebugUnitTest
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:kspDebugUnitTestKotlin NO-SOURCE
+> Task :app:compileDebugUnitTestKotlin NO-SOURCE
+> Task :app:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :feature-app-lock:hiltJavaCompileDebugUnitTest NO-SOURCE
+> Task :feature-app-lock:processDebugUnitTestJavaRes NO-SOURCE
+> Task :feature-app-lock:transformDebugUnitTestClassesWithAsm
+> Task :feature-app-lock:testDebugUnitTest NO-SOURCE
+> Task :feature-authentication:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:hiltAggregateDepsDebugUnitTest
+> Task :app:hiltJavaCompileDebugUnitTest NO-SOURCE
+> Task :app:processDebugUnitTestJavaRes NO-SOURCE
+> Task :feature-authentication:generateDebugUnitTestStubRFile
+> Task :feature-authentication:kspDebugUnitTestKotlin NO-SOURCE
+> Task :feature-authentication:compileDebugUnitTestKotlin NO-SOURCE
+> Task :feature-authentication:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :feature-authentication:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:transformDebugUnitTestClassesWithAsm
+> Task :app:testDebugUnitTest NO-SOURCE
+> Task :feature-automation:preDebugUnitTestBuild UP-TO-DATE
+> Task :feature-authentication:hiltAggregateDepsDebugUnitTest
+> Task :feature-authentication:hiltJavaCompileDebugUnitTest NO-SOURCE
+> Task :feature-authentication:processDebugUnitTestJavaRes NO-SOURCE
+> Task :feature-authentication:transformDebugUnitTestClassesWithAsm
+> Task :feature-automation:generateDebugUnitTestStubRFile
+> Task :feature-authentication:testDebugUnitTest NO-SOURCE
+> Task :feature-automation:kspDebugUnitTestKotlin NO-SOURCE
+> Task :feature-dashboard:preDebugUnitTestBuild UP-TO-DATE
+> Task :feature-automation:compileDebugUnitTestKotlin NO-SOURCE
+> Task :feature-automation:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :feature-automation:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :feature-automation:hiltAggregateDepsDebugUnitTest
+> Task :feature-automation:hiltJavaCompileDebugUnitTest NO-SOURCE
+> Task :feature-automation:processDebugUnitTestJavaRes NO-SOURCE
+> Task :feature-dashboard:generateDebugUnitTestStubRFile
+> Task :feature-automation:transformDebugUnitTestClassesWithAsm
+> Task :feature-automation:testDebugUnitTest NO-SOURCE
+> Task :feature-intruder-detection:preDebugUnitTestBuild UP-TO-DATE
+> Task :feature-dashboard:kspDebugUnitTestKotlin NO-SOURCE
+> Task :feature-dashboard:compileDebugUnitTestKotlin NO-SOURCE
+> Task :feature-dashboard:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :feature-dashboard:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :feature-dashboard:hiltAggregateDepsDebugUnitTest
+> Task :feature-intruder-detection:generateDebugUnitTestStubRFile
+> Task :feature-dashboard:hiltJavaCompileDebugUnitTest NO-SOURCE
+> Task :feature-intruder-detection:kspDebugUnitTestKotlin NO-SOURCE
+> Task :feature-dashboard:processDebugUnitTestJavaRes NO-SOURCE
+> Task :feature-intruder-detection:compileDebugUnitTestKotlin NO-SOURCE
+> Task :feature-intruder-detection:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :feature-intruder-detection:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :feature-dashboard:transformDebugUnitTestClassesWithAsm
+> Task :feature-dashboard:testDebugUnitTest NO-SOURCE
+> Task :feature-settings:preDebugUnitTestBuild UP-TO-DATE
+> Task :feature-intruder-detection:hiltAggregateDepsDebugUnitTest
+> Task :feature-intruder-detection:hiltJavaCompileDebugUnitTest NO-SOURCE
+> Task :feature-intruder-detection:processDebugUnitTestJavaRes NO-SOURCE
+> Task :feature-intruder-detection:transformDebugUnitTestClassesWithAsm
+> Task :feature-intruder-detection:testDebugUnitTest NO-SOURCE
+> Task :feature-settings:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :feature-vault:preDebugUnitTestBuild UP-TO-DATE
+> Task :feature-settings:generateDebugUnitTestStubRFile
+> Task :feature-settings:kspDebugUnitTestKotlin NO-SOURCE
+> Task :feature-settings:compileDebugUnitTestKotlin NO-SOURCE
+> Task :feature-settings:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :feature-vault:generateDebugUnitTestStubRFile
+> Task :feature-vault:kspDebugUnitTestKotlin NO-SOURCE
+> Task :feature-vault:compileDebugUnitTestKotlin NO-SOURCE
+> Task :feature-vault:javaPreCompileDebugUnitTest FROM-CACHE
+> Task :feature-vault:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :feature-vault:hiltAggregateDepsDebugUnitTest
+> Task :feature-vault:hiltJavaCompileDebugUnitTest NO-SOURCE
+> Task :feature-vault:processDebugUnitTestJavaRes NO-SOURCE
+> Task :feature-vault:transformDebugUnitTestClassesWithAsm
+> Task :feature-settings:hiltAggregateDepsDebugUnitTest
+> Task :feature-settings:hiltJavaCompileDebugUnitTest NO-SOURCE
+> Task :feature-vault:testDebugUnitTest NO-SOURCE
+> Task :feature-settings:processDebugUnitTestJavaRes NO-SOURCE
+> Task :feature-settings:transformDebugUnitTestClassesWithAsm
+> Task :feature-settings:testDebugUnitTest NO-SOURCE
+> Task :core-security:kspDebugUnitTestKotlin
+> Task :core-common:compileDebugUnitTestKotlin
+> Task :core-common:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :core-security:compileDebugUnitTestKotlin
+> Task :core-security:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :core-common:processDebugUnitTestJavaRes
+> Task :core-security:hiltAggregateDepsDebugUnitTest
+> Task :core-security:hiltJavaCompileDebugUnitTest NO-SOURCE
+> Task :core-security:processDebugUnitTestJavaRes
+> Task :core-security:transformDebugUnitTestClassesWithAsm
+> Task :core-common:testDebugUnitTest
+> Task :core-security:testDebugUnitTest
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_5-1793469627684.json
+
+BUILD SUCCESSFUL in 24s
+276 actionable tasks: 43 executed, 13 from cache, 220 up-to-date
