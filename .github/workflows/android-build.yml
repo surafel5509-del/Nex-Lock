@@ -85,6 +85,26 @@ jobs:
             ./gradlew :app:assembleRelease --stacktrace --no-daemon 2>&1 | tee ci-logs/assembleRelease.log
           fi
 
+      - name: Verify the built APKs
+        run: |
+          set -e
+          AAPT2="$(ls -d "$ANDROID_SDK_ROOT"/build-tools/*/aapt2 | sort -V | tail -1)"
+          echo "Using $AAPT2"
+          mkdir -p ci-logs
+          for apk in app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/release/app-release.apk; do
+            echo "--- $apk"
+            ls -lh "$apk"
+            "$AAPT2" dump badging "$apk" | grep -E "^package:|sdkVersion|targetSdkVersion|application-label" || true
+            "$AAPT2" dump permissions "$apk" | tee "ci-logs/$(basename "$apk").permissions.txt"
+            echo "native-code: $("$AAPT2" dump badging "$apk" | grep -c native-code || true) entries"
+            unzip -l "$apk" | tail -2
+          done
+          if grep -R "android.permission.INTERNET" ci-logs/*.permissions.txt; then
+            echo "::error title=Privacy regression::The built APK requests INTERNET"
+            exit 1
+          fi
+          echo "Verified: no INTERNET permission in either APK."
+
       - name: JVM unit tests
         run: |
           set -o pipefail
