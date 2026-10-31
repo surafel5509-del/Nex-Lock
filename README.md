@@ -1,5 +1,7 @@
 # NexLock
 
+[![Android Build](https://github.com/surafel5509-del/Nex-Lock/actions/workflows/android-build.yml/badge.svg)](https://github.com/surafel5509-del/Nex-Lock/actions/workflows/android-build.yml)
+
 A private, offline-first Android app locker: authentication gate for the apps you choose, an
 encrypted local vault for photos/videos/documents/notes, a local security journal, optional
 intruder detection, and schedule/Wi-Fi/place automation.
@@ -7,11 +9,26 @@ intruder detection, and schedule/Wi-Fi/place automation.
 NexLock has **no INTERNET permission**. Nothing is uploaded, synced or sold; every byte stays in
 the app sandbox.
 
-> **Build status:** the project is code-complete, but it has **not been compiled in the environment
-> where it was authored** (no Android SDK and no access to Google/Maven repositories there). See
-> [Verification status](#verification-status) before relying on it for a release.
+> **Build status:** GitHub Actions compiles the project on every push (JDK 17, Android SDK 34).
+> Debug + release APKs and the JVM unit-test results are produced there — see
+> [Download the APK](#download-the-apk) and [Verification status](#verification-status).
 
 ---
+
+## Download the APK
+
+Every successful CI run publishes the built APKs to a rolling prerelease:
+
+**<https://github.com/surafel5509-del/Nex-Lock/releases/tag/nexlock-ci-latest>**
+
+* `NexLock-debug-<sha>.apk` – debuggable build, signed with the CI debug key.
+* `NexLock-release-<sha>.apk` – R8-minified release build. It is signed with the **debug key**
+  unless the `NEXLOCK_KEYSTORE_BASE64`, `NEXLOCK_STORE_PASSWORD`, `NEXLOCK_KEY_ALIAS` and
+  `NEXLOCK_KEY_PASSWORD` repository secrets are configured, so treat it as a test build.
+
+Install with `adb install -r NexLock-debug-<sha>.apk`, or copy it to the device and open it
+(allow "install unknown apps" for your file manager). The same APKs are attached to each
+workflow run as artifacts.
 
 ## Feature overview
 
@@ -197,17 +214,25 @@ R8/ProGuard rules live in `app/proguard-rules.pro` (Room, Hilt, enums, Compose).
 
 ## Verification status
 
-This repository was generated in a sandbox **without** a JDK/Android SDK and **without** access to
-`dl.google.com` or Maven Central. Consequently:
+The authoring sandbox had no JDK/Android SDK and no access to `dl.google.com`/Maven Central, so the
+first compilation happened on **GitHub Actions** instead. Current state of the `arena/23835afb-nex-lock`
+branch:
 
-* ❌ `./gradlew assembleDebug` has **not** been executed against this tree.
-* ❌ No unit or instrumented test has been executed.
-* ✅ Everything is statically consistent: imports resolve to declarations in the tree, module
-  dependencies are declared, and the manifest/DI wiring is complete — but expect normal
-  first-build issues (dependency versions, a lint warning) when you build locally.
+* ✅ `:app:assembleDebug` — BUILD SUCCESSFUL (JDK 17, Android SDK 34, AGP 8.5.2, Kotlin 2.0.10).
+* ✅ `:app:assembleRelease` — BUILD SUCCESSFUL with R8 minification and resource shrinking.
+* ✅ `:app:testDebugUnitTest` — all JVM unit tests (`core-common` policies, `core-security` crypto)
+  pass.
+* ✅ Both APKs are built, uploaded as run artifacts, and published to
+  [`nexlock-ci-latest`](https://github.com/surafel5509-del/Nex-Lock/releases/tag/nexlock-ci-latest).
+* ⏳ Instrumented tests (Room DAOs, Hilt graph, manifest-privacy invariants) are wired into the
+  workflow behind manual dispatch and have **not** been executed yet — run "Android Build" from the
+  Actions tab with `run_instrumented_tests` enabled.
+* ⏳ No manual device testing (accessibility lock, biometrics, vault, intruder capture) has been
+  performed yet; the matrix in [TESTING.md](TESTING.md) still has to be executed.
 
-If a build fails, open an issue with the Gradle output; the most likely causes are dependency
-version drift and Kotlin/Compose compiler version alignment.
+Compilation is real, but passing CI is not the same as having verified runtime behaviour on a
+physical device. Treat the release APK as a test build until the manual matrix has been run and a
+real signing key is configured.
 
 ---
 

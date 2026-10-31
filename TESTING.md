@@ -1,8 +1,9 @@
 # Testing NexLock
 
-> **Status:** the test sources below exist in the repository but **have not been executed** in the
-> environment that generated them (no Android SDK, no JDK, no access to Google/Maven repositories).
-> Treat everything here as a specification of intent plus a manual checklist, not as a test report.
+> **Status:** the JVM unit tests run on every push in GitHub Actions and are green
+> (`.github/workflows/android-build.yml`, job "Assemble APKs + unit tests"). The instrumented suites
+> are wired into the same workflow behind manual dispatch and have **not** been executed yet. The
+> manual matrix below is still a checklist, not a test report.
 
 ## Automated tests
 

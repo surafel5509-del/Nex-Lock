@@ -124,8 +124,28 @@ jobs:
             **/build/test-results/**
           if-no-files-found: ignore
 
-      - name: Commit the build log so it can be inspected without the log host
-        if: always() && github.event_name != 'pull_request'
+      - name: Publish APKs to the rolling CI release
+        if: success() && github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          short_sha="${GITHUB_SHA::7}"
+          mkdir -p dist
+          cp app/build/outputs/apk/debug/app-debug.apk "dist/NexLock-debug-${short_sha}.apk" 2>/dev/null || true
+          cp app/build/outputs/apk/release/app-release.apk "dist/NexLock-release-${short_sha}.apk" 2>/dev/null || true
+          ls -la dist
+          gh release view nexlock-ci-latest >/dev/null 2>&1 \
+            || gh release create nexlock-ci-latest \
+                 --prerelease \
+                 --title "NexLock CI build (latest)" \
+                 --notes "Automatic debug and release APKs built by GitHub Actions from the newest commit. Release APK is debug-key signed unless signing secrets are configured." \
+                 --target "$GITHUB_SHA"
+          gh release upload nexlock-ci-latest dist/*.apk --clobber
+          echo "Download: https://github.com/${GITHUB_REPOSITORY}/releases/tag/nexlock-ci-latest"
+
+      - name: Commit the build log so failures can be inspected without the log host
+        if: failure() && github.event_name == 'push'
         run: |
           if [ -z "$(ls -A ci-logs 2>/dev/null)" ]; then
             echo "No log produced"
