@@ -1,5 +1,6 @@
 package com.nexlock.feature.dashboard
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,7 +16,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.background
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ChevronRight
 import androidx.compose.material.icons.rounded.Lock
@@ -56,6 +56,7 @@ import com.nexlock.design.components.NexPrimaryButton
 import com.nexlock.design.components.NexSecondaryButton
 import com.nexlock.design.components.SectionHeader
 import com.nexlock.design.components.StatusPill
+import com.nexlock.design.components.clickableNoRipple
 import com.nexlock.design.components.rememberNexHaptics
 import com.nexlock.design.components.securityEventIcon
 import com.nexlock.design.strings.LocalStrings

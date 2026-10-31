@@ -167,7 +167,13 @@ class SettingsRepository @Inject constructor(
         }
     }
 
-    private suspend fun edit(block: (MutablePreferences) -> Unit) = dataStore.edit(block)
+    /**
+     * Writes preferences and deliberately returns [Unit]: exposing the DataStore `Preferences` type
+     * here would leak an implementation detail into every public setter's signature.
+     */
+    private suspend fun edit(block: (MutablePreferences) -> Unit) {
+        dataStore.edit(block)
+    }
 
     companion object {
         val KEY_PROTECTION_ENABLED = booleanPreferencesKey("protection_enabled")
