@@ -133,6 +133,7 @@ class IntruderRepository @Inject constructor(
                 SecuritySeverity.INFO,
                 "Intruder incident history cleared",
             )
+            Unit
         }
     }
 

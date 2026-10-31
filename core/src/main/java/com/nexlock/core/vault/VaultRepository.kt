@@ -112,6 +112,7 @@ class VaultRepository @Inject constructor(
                 SecuritySeverity.WARNING,
                 "A vault file was exported to a user selected location",
             )
+            Unit
         }
     }
 
@@ -125,6 +126,7 @@ class VaultRepository @Inject constructor(
                 SecuritySeverity.INFO,
                 "A vault file was securely deleted",
             )
+            Unit
         }
     }
 

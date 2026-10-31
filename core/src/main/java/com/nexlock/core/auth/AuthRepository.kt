@@ -143,6 +143,7 @@ class AuthRepository @Inject constructor(
                 SecuritySeverity.INFO,
                 "Unlock credential changed (${newMode.name.lowercase()})",
             )
+            Unit
         }
     }
 
@@ -153,6 +154,7 @@ class AuthRepository @Inject constructor(
                     throw CredentialException(CredentialError.MISMATCH, "Current credential is incorrect")
                 }
                 settingsRepository.setAuthMode(newMode)
+                Unit
             }
         }
 
