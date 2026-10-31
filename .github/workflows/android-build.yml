@@ -1,0 +1,161 @@
+name: Android Build
+
+on:
+  push:
+    branches:
+      - main
+      - 'arena/**'
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      run_instrumented_tests:
+        description: 'Also run the instrumented tests on an emulator (slow)'
+        type: boolean
+        default: false
+
+concurrency:
+  group: android-build-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  GRADLE_OPTS: '-Dorg.gradle.jvmargs=-Xmx4096m -Dkotlin.daemon.jvmargs=-Xmx2048m'
+  NEXLOCK_CERT_SHA256: ${{ vars.NEXLOCK_CERT_SHA256 }}
+
+jobs:
+  build:
+    name: Assemble APKs + unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle (with cache)
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: false
+
+      - name: Make the wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: Toolchain report
+        run: |
+          ./gradlew --version
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          ls "$ANDROID_SDK_ROOT/platforms" || true
+
+      - name: Assemble debug APK
+        run: ./gradlew :app:assembleDebug --stacktrace --no-daemon
+
+      - name: Assemble release APK
+        # Signed with the debug key unless the NEXLOCK_* signing secrets are configured,
+        # which keeps this workflow usable without exposing a release keystore.
+        run: |
+          if [ -n "${{ secrets.NEXLOCK_KEYSTORE_BASE64 }}" ]; then
+            echo "Using the release keystore from repository secrets"
+            echo "${{ secrets.NEXLOCK_KEYSTORE_BASE64 }}" | base64 -d > "$RUNNER_TEMP/nexlock-release.jks"
+            cat > keystore.properties <<PROPS
+          storeFile=$RUNNER_TEMP/nexlock-release.jks
+          storePassword=${{ secrets.NEXLOCK_STORE_PASSWORD }}
+          keyAlias=${{ secrets.NEXLOCK_KEY_ALIAS }}
+          keyPassword=${{ secrets.NEXLOCK_KEY_PASSWORD }}
+          PROPS
+          else
+            echo "No release keystore configured - assembleRelease will fall back to debug signing"
+          fi
+          if [ -n "$NEXLOCK_CERT_SHA256" ]; then
+            ./gradlew :app:assembleRelease --stacktrace --no-daemon -Pnexlock.certSha256="$NEXLOCK_CERT_SHA256"
+          else
+            ./gradlew :app:assembleRelease --stacktrace --no-daemon
+          fi
+
+      - name: JVM unit tests
+        run: ./gradlew testDebugUnitTest --stacktrace --no-daemon
+
+      - name: Upload debug APK
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nexlock-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: warn
+
+      - name: Upload release APK
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nexlock-release-apk
+          path: app/build/outputs/apk/release/*.apk
+          if-no-files-found: warn
+
+      - name: Upload test + lint reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nexlock-reports
+          path: |
+            **/build/reports/tests/**
+            **/build/test-results/**
+          if-no-files-found: ignore
+
+  instrumented:
+    name: Instrumented tests (emulator, API 34)
+    if: github.event_name == 'workflow_dispatch' && inputs.run_instrumented_tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    needs: build
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle (with cache)
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' \
+            | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Run instrumented tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          disable-animations: true
+          emulator-boot-timeout: 900
+          script: |
+            chmod +x ./gradlew
+            ./gradlew :core-database:connectedDebugAndroidTest \
+                      :core-security:connectedDebugAndroidTest \
+                      :app:connectedDebugAndroidTest \
+                      --stacktrace --no-daemon
+
+      - name: Upload instrumented reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nexlock-instrumented-reports
+          path: |
+            **/build/reports/androidTests/**
+            **/build/outputs/androidTest-results/**
+          if-no-files-found: ignore
