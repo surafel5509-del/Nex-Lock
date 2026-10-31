@@ -29,7 +29,7 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
 
     implementation(libs.hilt.android)
-    ksp(libs.room.compiler)
+    ksp(libs.androidx.room.compiler)
     ksp(libs.hilt.compiler)
 
     androidTestImplementation(libs.androidx.room.testing)
