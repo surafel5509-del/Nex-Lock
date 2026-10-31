@@ -5,7 +5,6 @@ import android.content.pm.PackageManager
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
-import androidx.camera.core.OutputFileOptions
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -80,7 +79,7 @@ fun hasCameraPermission(context: Context): Boolean =
 
 private suspend fun ImageCapture.capture(target: File, executor: Executor): Result<File> =
     suspendCancellableCoroutine { continuation ->
-        val options = OutputFileOptions.Builder(target).build()
+        val options = ImageCapture.OutputFileOptions.Builder(target).build()
         takePicture(
             options,
             executor,

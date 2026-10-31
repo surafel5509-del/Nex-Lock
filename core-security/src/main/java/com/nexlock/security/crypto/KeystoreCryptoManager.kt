@@ -156,7 +156,7 @@ class KeystoreCryptoManager @Inject constructor() : CryptoManager {
         val factory = SecretKeyFactory.getInstance(key.algorithm, ANDROID_KEYSTORE)
         val info = factory.getKeySpec(key, KeyInfo::class.java) as KeyInfo
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            info.securityLevel != KeyInfo.SECURITY_LEVEL_SOFTWARE
+            info.securityLevel != KeyProperties.SECURITY_LEVEL_SOFTWARE
         } else {
             info.isInsideSecureHardware
         }

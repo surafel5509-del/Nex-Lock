@@ -51,7 +51,7 @@ internal class AeadChunkedStream(private val keyProvider: () -> SecretKey) {
         readFully(input, magic)
         if (!magic.contentEquals(MAGIC)) throw CryptoException("Unsupported encrypted container")
         val version = input.read()
-        if (version != VERSION) throw CryptoException("Unsupported container version $version")
+        if (version != VERSION.toInt()) throw CryptoException("Unsupported container version $version")
         val declaredChunk = readInt(input)
         if (declaredChunk !in 1..(4 * 1024 * 1024)) throw CryptoException("Invalid chunk size")
 
