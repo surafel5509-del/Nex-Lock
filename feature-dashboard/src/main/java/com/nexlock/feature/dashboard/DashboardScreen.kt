@@ -209,7 +209,7 @@ fun DashboardScreen(
                             text = strings.securityLog,
                             style = MaterialTheme.typography.labelMedium,
                             color = MaterialTheme.colorScheme.primary,
-                            modifier = Modifier.clickableNoRipple(actions.onOpenSecurityLog),
+                            modifier = Modifier.clickableNoRipple(onClick = actions.onOpenSecurityLog),
                         )
                     },
                 )
@@ -343,7 +343,7 @@ private fun ProtectionHero(
                             text = "End",
                             style = MaterialTheme.typography.labelMedium,
                             color = MaterialTheme.colorScheme.primary,
-                            modifier = Modifier.clickableNoRipple(onEndTemporaryUnlock),
+                            modifier = Modifier.clickableNoRipple(onClick = onEndTemporaryUnlock),
                         )
                     }
                 }
