@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -49,9 +51,9 @@ import com.nexlock.design.components.NexConfirmDialog
 import com.nexlock.design.components.NexFilterChip
 import com.nexlock.design.components.NexTopBar
 import com.nexlock.design.components.PermissionCard
+import com.nexlock.design.components.SettingsActionRow
 import com.nexlock.design.components.SettingsGroup
 import com.nexlock.design.components.SettingsInfoRow
-import com.nexlock.design.components.SettingsActionRow
 import com.nexlock.design.components.SettingsNavRow
 import com.nexlock.design.components.SettingsToggleRow
 import com.nexlock.design.components.StatusPill
@@ -455,12 +457,12 @@ fun SecurityLogScreen(
                 title = "No events",
                 description = "Security events are recorded locally as you use NexLock.",
             )
-            else -> androidx.compose.foundation.lazy.LazyColumn(
+            else -> LazyColumn(
                 modifier = Modifier.fillMaxSize(),
                 contentPadding = PaddingValues(start = 20.dp, end = 20.dp, top = 8.dp, bottom = 24.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-                androidx.compose.foundation.lazy.items(state.events, key = { it.id }) { event ->
+                items(state.events, key = { it.id }) { event ->
                     val tint = when (event.severity) {
                         SecuritySeverity.INFO -> colors.success
                         SecuritySeverity.WARNING -> colors.warning

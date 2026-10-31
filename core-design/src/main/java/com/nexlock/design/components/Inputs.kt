@@ -372,8 +372,8 @@ fun NexTextField(
 fun NexFilterChip(
     label: String,
     selected: Boolean,
-    onClick: () -> Unit,
     modifier: Modifier = Modifier,
+    onClick: () -> Unit,
 ) {
     val colors = LocalNexColors.current
     Box(

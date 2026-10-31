@@ -31,6 +31,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -56,8 +59,6 @@ import com.nexlock.design.components.SettingsGroup
 import com.nexlock.design.components.SettingsToggleRow
 import com.nexlock.design.components.clickableNoRipple
 import com.nexlock.design.theme.LocalNexColors
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 
 @Composable
 fun IntruderRoute(
@@ -302,7 +303,7 @@ private fun IncidentRow(
                 Text(
                     when {
                         incident.hasPhoto -> "Encrypted capture available · tap to view"
-                        incident.note != null -> incident.note
+                        incident.note != null -> incident.note.orEmpty()
                         else -> "No capture stored"
                     },
                     style = MaterialTheme.typography.labelSmall,
