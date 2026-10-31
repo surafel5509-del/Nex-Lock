@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NexLock</string>
+    <string name="accessibility_service_label">NexLock protection</string>
+    <string name="accessibility_service_description">NexLock shows its lock screen when a protected app comes to the foreground. It never reads screen content, never performs gestures and never types on your behalf.</string>
+    <string name="monitor_channel_name">Background protection</string>
+    <string name="monitor_notification_title">NexLock is protecting your apps</string>
+    <string name="monitor_notification_text">Tap to manage protection</string>
+    <string name="lock_activity_title">NexLock</string>
+</resources>

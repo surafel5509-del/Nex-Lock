@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Compose owns the UI; the platform theme only provides window chrome. -->
+    <style name="Theme.NexLock" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/nexlock_background</item>
+        <item name="android:statusBarColor">@color/nexlock_status_bar</item>
+        <item name="android:navigationBarColor">@color/nexlock_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:colorAccent">#3D7BFF</item>
+    </style>
+
+    <!-- Transparent window used by the lock screen so the protected app stays visible underneath. -->
+    <style name="Theme.NexLock.Lock" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Theme.NexLock.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/nexlock_splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.NexLock</item>
+    </style>
+
+</resources>

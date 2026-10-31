@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Least-privilege accessibility configuration:
+  * only window state change events (who came to the foreground),
+  * no window content retrieval, no gesture injection, no text input.
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagDefault"
+    android:canPerformGestures="false"
+    android:canRetrieveWindowContent="false"
+    android:description="@string/accessibility_service_description"
+    android:notificationTimeout="50"
+    android:settingsActivity="com.nexlock.MainActivity"
+    android:summary="@string/accessibility_service_description" />

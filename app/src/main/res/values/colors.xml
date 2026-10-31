@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="nexlock_background">#04050A</color>
+    <color name="nexlock_status_bar">#04050A</color>
+    <color name="ic_launcher_background">#0A1020</color>
+    <color name="nexlock_splash_background">#04050A</color>
+</resources>
